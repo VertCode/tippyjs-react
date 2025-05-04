@@ -46,7 +46,7 @@ export default function TippyGenerator(tippy) {
     if (isControlledMode) {
       if (process.env.NODE_ENV !== 'production') {
         ['trigger', 'hideOnClick', 'showOnCreate'].forEach(nativeStateProp => {
-          if (props[nativeStateProp] !== undefined) {
+          if (props[nativeStateProp] !== undefined && process.env.TIPPY_OUTPUT_DISABLE !== 'true') {
             console.warn(
               [
                 `@tippyjs/react: Cannot specify \`${nativeStateProp}\` prop in`,

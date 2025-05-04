@@ -15,7 +15,7 @@ export const classNamePlugin = {
 
     function add() {
       if (instance.props.className && !isDefaultRenderFn()) {
-        if (process.env.NODE_ENV !== 'production') {
+        if (process.env.NODE_ENV !== 'production' && process.env.TIPPY_OUTPUT_DISABLE !== 'true') {
           console.warn(
             [
               '@tippyjs/react: Cannot use `className` prop in conjunction with',

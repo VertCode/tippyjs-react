@@ -20,7 +20,7 @@ export default function useSingletonGenerator(createSingleton) {
       const {children, sourceData} = mutableBox;
 
       if (!sourceData) {
-        if (process.env.NODE_ENV !== 'production') {
+        if (process.env.NODE_ENV !== 'production' && process.env.TIPPY_OUTPUT_DISABLE !== 'true') {
           console.error(
             [
               '@tippyjs/react: The `source` variable from `useSingleton()` has',
