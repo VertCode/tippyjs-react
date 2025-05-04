@@ -1,3 +1,4 @@
+import { createRoot } from "react-dom/client";
 import React, {useState, useEffect, useRef, forwardRef} from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
@@ -441,4 +442,5 @@ function NestedContent() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);

@@ -5,3 +5,5 @@ coverage
 dist
 umd
 esm
+package-lock.yaml
+.parcel-cache

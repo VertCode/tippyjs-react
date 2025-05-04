@@ -11,7 +11,11 @@ export default (Tippy, defaultProps) =>
           ? cloneElement(children, {
               ref(node) {
                 preserveRef(ref, node);
-                preserveRef(children.ref, node);
+                // In React 19, accessing element.ref is not supported
+                // Use the key property to check if it has a ref
+                if (children.props && children.props.ref) {
+                  preserveRef(children.props.ref, node);
+                }
               },
             })
           : null}
